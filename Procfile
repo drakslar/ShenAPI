@@ -1,1 +1,1 @@
-web: gunicorn shenAPI:app
+web: gunicorn ShenAPI:app
