@@ -56,14 +56,16 @@ def get_by_id(id_):
         return (str(e))
 
 
-@app.route("/add/form", methods = ['GET', 'POST'])
+@app.route("/add", methods = ['GET', 'POST'])
 def add_user_form():
     if request.method == 'POST':
         name = request.form.get('name')
+        email = request.form.get('email')
         password = request.form.get('password')
         try:
             user = User(
                 name = name,
+                email = email,
                 password = password
             )
             db.session.add(user)
