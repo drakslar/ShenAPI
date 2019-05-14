@@ -80,7 +80,7 @@ def signup():
                 db.session.commit()
                 login_user(user, remember=True)
                 session["logged_in"] = True
-                home()
+                return home()
             except Exception as e:
                 return (str(e))
     return render_template("signup.html")
