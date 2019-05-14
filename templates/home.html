@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShenAPI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+
+<body>
+    <section class="hero is-primary is-fullheight">
+
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+
+                     <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="/add" class="navbar-item">Add New User</a>
+                            <a href="/getall" class="navbar-item">See All Users</a>
+                            <a href="/deleteall" class="navbar-item">Delete All Users From DB</a>
+                            <a href="/logout" class="navbar-item"> Log Out</a>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                {% if current_user.is_authenticated %}
+                    <h1> Hello {{ current_user.name }}!</h1>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
